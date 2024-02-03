@@ -30,7 +30,7 @@ sol-carousel {
 			@include flex;
 
 			min-width: clamp(
-				rem(300),
+				min(rem(300), 100%),
 				calc(33% - rem(get($spacings, two))),
 				rem(500)
 			);
