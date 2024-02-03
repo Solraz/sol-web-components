@@ -1,0 +1,29 @@
+@mixin flex {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	min-width: 0;
+}
+
+.content-grid,
+container {
+	display: grid;
+	grid-template-columns:
+		[grid-start] minmax(0, 0.12fr) [content-start] 1fr
+		[content-end] minmax(0, 0.12fr) [grid-end];
+	width: 100%;
+
+	& > *:not(.breakout) {
+		grid-column: content;
+	}
+
+	& > .breakout {
+		grid-column: grid;
+	}
+}

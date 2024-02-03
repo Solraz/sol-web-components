@@ -1,0 +1,50 @@
+@use "../mixins/bootstrap" as *;
+
+sol-carousel {
+	@include flex;
+	width: 100%;
+
+	overflow: hidden;
+
+	sol-carousel-items {
+		@include flex;
+		justify-content: start;
+		gap: rem(get($spacings, two));
+
+		width: 100%;
+
+		overflow-x: visible;
+
+		// overflow-x: scroll;
+		// overflow-y: hidden;
+		// scroll-snap-type: x proximity;
+		// -ms-overflow-style: none;
+		// scrollbar-width: none;
+		// scroll-behavior: smooth;
+
+		// &::-webkit-scrollbar {
+		// 	display: none;
+		// }
+
+		sol-carousel-item {
+			@include flex;
+
+			min-width: clamp(
+				rem(300),
+				calc(33% - rem(get($spacings, two))),
+				rem(500)
+			);
+
+			height: rem(240);
+
+			border: rem(1) solid get($colors, darkgrey);
+			border-radius: rem(12);
+
+			// scroll-snap-align: center;
+
+			* {
+				user-select: none;
+			}
+		}
+	}
+}

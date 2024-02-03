@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Solraz Web Components</title>
+
+	<link rel="stylesheet" href="./css/style.css" />
+
+	{% block custom_style %} {% endblock custom_style %}
+</head>
+
+<body>
+	{% block menu %} {% endblock menu %}
+
+	<main class="content-grid">
+		{% block content %} {% endblock content %}
+	</main>
+
+	{% block custom_script %} {% endblock custom_script %}
+	<script src="./js/htmx.min.js"></script>
+	<script src="./js/scripts.js" type="module"></script>
+</body>
+
+</html>

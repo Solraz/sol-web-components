@@ -1,0 +1,146 @@
+{% extends "_base.html" %}
+
+{% block content %}
+<show-component>
+  <div class="show-component-title">
+    <h2 class="weight-500">Carousel</h2>
+    <h5 class="weight-300">A horizontal stack of items that each reveal a section of content.</h5>
+    <div class="tags">
+      <tag>
+        <h6>Docs</h6> <svg width="12" height="12" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </tag>
+
+      <tag>
+        <h6>API Reference</h6> <svg width="12" height="12" viewBox="0 0 15 15" fill="none"
+          xmlns="http://www.w3.org/2000/svg" class="h-3 w-3">
+          <path
+            d="M3 2C2.44772 2 2 2.44772 2 3V12C2 12.5523 2.44772 13 3 13H12C12.5523 13 13 12.5523 13 12V8.5C13 8.22386 12.7761 8 12.5 8C12.2239 8 12 8.22386 12 8.5V12H3V3L6.5 3C6.77614 3 7 2.77614 7 2.5C7 2.22386 6.77614 2 6.5 2H3ZM12.8536 2.14645C12.9015 2.19439 12.9377 2.24964 12.9621 2.30861C12.9861 2.36669 12.9996 2.4303 13 2.497L13 2.5V2.50049V5.5C13 5.77614 12.7761 6 12.5 6C12.2239 6 12 5.77614 12 5.5V3.70711L6.85355 8.85355C6.65829 9.04882 6.34171 9.04882 6.14645 8.85355C5.95118 8.65829 5.95118 8.34171 6.14645 8.14645L11.2929 3H9.5C9.22386 3 9 2.77614 9 2.5C9 2.22386 9.22386 2 9.5 2H12.4999H12.5C12.5678 2 12.6324 2.01349 12.6914 2.03794C12.7504 2.06234 12.8056 2.09851 12.8536 2.14645Z"
+            fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"></path>
+        </svg>
+      </tag>
+    </div>
+  </div>
+  <div class="show-component-nav">
+    <h5 data-show="preview" class="active">Preview</h5>
+    <h5 data-show="html">HTML</h5>
+    <h5 data-show="scss">SCSS</h5>
+    <h5 data-show="js">JS</h5>
+  </div>
+  <div class="show-component-visual">
+    <div class="visual-holder">
+      <container preview class="active">
+        <sol-carousel>
+          <sol-carousel-items>
+            <sol-carousel-item>
+              <h1>1</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>2</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>3</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>4</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>5</h1>
+            </sol-carousel-item>
+          </sol-carousel-items>
+        </sol-carousel>
+      </container>
+      <container html>
+        <code>
+<sol-accordion>
+  <sol-accordion-item>
+    <div class="header"></div>
+    <div class="content"></div>
+  </sol-accordion-item>
+</sol-accordion>
+        </code>
+      </container>
+      <container scss>
+        <code>
+sol-accordion {
+  @include flex;
+  flex-flow: column;
+
+  > sol-accordion-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
+
+    cursor: pointer;
+
+    > .header {
+      @include flex;
+      justify-content: space-between;
+
+      > svg {
+        transform: rotate(0turn);
+        transition: transform 125ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
+    }
+
+    &.active {
+      > .header {
+        > svg {
+          transform: rotate(0.5turn);
+        }
+      }
+
+      > .content {
+        grid-template-rows: 1fr;
+
+        transition: grid-template-rows 175ms
+          cubic-bezier(0.455, 0.03, 0.515, 0.955);
+      }
+    }
+
+    > .content {
+      display: grid;
+      grid-template-rows: 0fr;
+
+      transition: grid-template-rows 225ms
+        cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+      padding: rem(get($spacings, small)) rem(get($spacings, one))
+        rem(get($spacings, one));
+
+      > .content-inner {
+        overflow: hidden;
+      }
+    }
+  }
+}
+        </code>
+      </container>
+      <container js>
+        <code>
+const sol_accordion = () => {
+  let accs = document.querySelectorAll(`sol-accordion > sol-accordion-item`);
+
+  for (const a of accs) {
+    a.addEventListener("click", () => {
+      let others = a.parentElement.querySelector(`.active`);
+
+      if (others !== a) {
+        others?.classList.remove(`active`);
+      }
+
+      a.classList.toggle(`active`);
+    });
+  }
+};
+
+export { sol_accordion };
+        </code>
+      </container>
+    </div>
+  </div>
+</show-component>
+{% endblock content %}

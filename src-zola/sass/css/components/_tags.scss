@@ -1,0 +1,13 @@
+@use "../mixins/bootstrap" as *;
+
+tag {
+	@include flex;
+	gap: rem(get($spacings, half));
+
+	background-color: get($colors, muted);
+
+	padding: rem(get($spacings, small)) rem(get($spacings, one));
+
+	border: rem(1) solid get($colors, muted);
+	border-radius: rem(16);
+}

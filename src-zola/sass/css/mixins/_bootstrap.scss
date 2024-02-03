@@ -1,0 +1,20 @@
+@forward "sass:map";
+@forward "theme";
+@forward "typography";
+@forward "functions";
+@forward "mixins";
+
+html {
+	font-size: 16px;
+
+	/*
+  * 4K Support Base
+  */
+	@media (min-width: 1920px) {
+		font-size: 0.83333vw;
+	}
+
+	@media (min-width: 2560px) {
+		font-size: 0.75vw;
+	}
+}

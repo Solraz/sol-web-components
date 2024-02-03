@@ -1,0 +1,15 @@
+@use "mixins/bootstrap" as *;
+
+@use "components/show-component";
+@use "components/tags";
+@use "components/sol-accordion";
+@use "components/sol-carousel";
+
+body {
+	background-color: get($colors, background);
+	color: get($colors, white);
+}
+
+code {
+	white-space: pre;
+}
