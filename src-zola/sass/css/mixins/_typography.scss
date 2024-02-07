@@ -54,7 +54,7 @@ $sizes: (
 			font-weight: 400;
 		} @else {
 			line-height: clamp($sizemin * 0.8, $fluid * 1.5, $sizemax * 1.33);
-			letter-spacing: calc(0.075 * $size) + rem;
+			letter-spacing: calc(0.025 * $size) + rem;
 			font-weight: 400;
 		}
 	}
@@ -77,7 +77,7 @@ $sizes: (
 
 			font-size: clamp($sizemin, $fluid, $sizemax);
 			line-height: clamp($sizemin * 1.1, $fluid * 1.5, $sizemax * 1.33);
-			letter-spacing: calc(0.1 * $size) + rem;
+			letter-spacing: calc(0.025 * $size) + rem;
 
 			font-weight: 400;
 		}
@@ -86,6 +86,35 @@ $sizes: (
 			font-weight: 500;
 		}
 	}
+}
+
+a {
+	color: inherit;
+}
+
+u {
+	font-size: inherit;
+	line-height: inherit;
+	letter-spacing: inherit;
+	font-weight: inherit;
+}
+
+input,
+select,
+option,
+label {
+	$size: map.get($sizes, h5);
+
+	$sizemin: calc($size * 0.8) + rem;
+	$sizevw: $size * 1 + vw;
+	$fluid: calc($sizevw + ($sizemin * 0.75));
+	$sizemax: calc($size * 1) + rem;
+
+	font-size: clamp($sizemin, $fluid, $sizemax);
+	line-height: clamp($sizemin * 0.8, $fluid * 1.25, $sizemax * 1.15);
+	letter-spacing: calc(0.025 * $size) + rem;
+
+	font-weight: 400;
 }
 
 strong {

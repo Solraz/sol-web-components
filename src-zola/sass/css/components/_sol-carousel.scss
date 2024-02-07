@@ -15,21 +15,10 @@ sol-carousel {
 
 		overflow-x: visible;
 
-		// overflow-x: scroll;
-		// overflow-y: hidden;
-		// scroll-snap-type: x proximity;
-		// -ms-overflow-style: none;
-		// scrollbar-width: none;
-		// scroll-behavior: smooth;
-
-		// &::-webkit-scrollbar {
-		// 	display: none;
-		// }
-
 		sol-carousel-item {
 			@include flex;
 
-			min-width: clamp(
+			width: clamp(
 				min(rem(300), 100%),
 				calc(33% - rem(get($spacings, two))),
 				rem(500)
@@ -40,10 +29,28 @@ sol-carousel {
 			border: rem(1) solid get($colors, darkgrey);
 			border-radius: rem(12);
 
-			// scroll-snap-align: center;
+			position: relative;
 
 			* {
 				user-select: none;
+			}
+
+			.img-holder {
+				@include flex;
+				height: 100%;
+				width: 100%;
+
+				position: absolute;
+
+				padding: rem(get($spacings, one));
+
+				z-index: -1;
+
+				img {
+					height: 100%;
+					width: 100%;
+					object-fit: cover;
+				}
 			}
 		}
 	}

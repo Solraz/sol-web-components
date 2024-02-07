@@ -62,6 +62,9 @@ show-component {
 			width: 100%;
 
 			overflow: visible;
+			overflow-y: auto;
+
+			padding: rem(get($spacings, two)) rem(get($spacings, two));
 		}
 
 		container {
@@ -75,6 +78,10 @@ show-component {
 			&.active {
 				display: grid;
 				order: -1;
+			}
+
+			&[preview] {
+				align-items: center;
 			}
 		}
 	}

@@ -1,0 +1,129 @@
+@use "../mixins/bootstrap" as *;
+
+.sol-form {
+	@include flex;
+	flex-flow: column;
+	align-items: start;
+	justify-content: start;
+
+	gap: rem(get($spacings, one));
+
+	.sol-form-group {
+		@include flex;
+		flex-flow: column;
+		align-items: start;
+
+		gap: rem(get($spacings, half));
+	}
+
+	.sol-form-label {
+		font-weight: 500;
+
+		> * {
+			font-weight: 500;
+		}
+	}
+
+	.sol-form-group-inline {
+		@include flex;
+		justify-content: start;
+		align-items: start;
+
+		gap: rem(12);
+	}
+
+	.sol-form-group-checkbox {
+		border: rem(1) solid get($colors, darkgrey);
+		border-radius: rem(6);
+
+		padding: rem(get($spacings, one)) rem(get($spacings, two));
+	}
+
+	.sol-form-input {
+		padding: rem(get($spacings, small)) rem(get($spacings, half));
+		outline: none;
+
+		border: rem(1) solid get($colors, darkgrey);
+		border-radius: rem(6);
+
+		background-color: get($colors, black);
+		color: get($colors, white);
+
+		&:focus {
+			border: rem(1) solid get($colors, white);
+		}
+
+		&[type="submit"] {
+			padding: rem(get($spacings, half)) rem(get($spacings, one));
+
+			background-color: get($colors, white);
+			color: get($colors, black);
+
+			border: rem(1) solid get($colors, white);
+			border-radius: rem(6);
+		}
+
+		&[type="checkbox"] {
+			@include flex;
+
+			position: relative;
+
+			transform: translateY(rem(3));
+
+			+ .sol-form-label {
+				@include flex;
+				flex-flow: column;
+				align-items: start;
+				justify-content: start;
+
+				height: 100%;
+
+				> *:not(:first-child) {
+					font-weight: 400;
+				}
+			}
+
+			&:checked {
+				&::before {
+					display: flex;
+				}
+
+				&::after {
+					background-color: get($colors, white);
+				}
+			}
+
+			&::before {
+				content: "";
+
+				display: none;
+
+				position: absolute;
+
+				width: rem(3);
+				height: rem(7);
+
+				border-width: 0 rem(2) rem(2) 0;
+				border-color: get($colors, black);
+				border-style: solid;
+
+				transform: rotate(45deg) translateX(rem(-1)) translateY(rem(-1));
+
+				z-index: 2;
+			}
+
+			&::after {
+				content: "";
+
+				position: absolute;
+
+				height: calc(100% - rem(1));
+				width: calc(100% - rem(0));
+
+				border: rem(1) solid get($colors, white);
+				border-radius: rem(3);
+				background-color: get($colors, black);
+			}
+		}
+	}
+}

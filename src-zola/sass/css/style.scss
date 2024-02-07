@@ -4,10 +4,12 @@
 @use "components/tags";
 @use "components/sol-accordion";
 @use "components/sol-carousel";
+@use "components/sol-forms";
 
 body {
 	background-color: get($colors, background);
 	color: get($colors, white);
+	color-scheme: dark;
 }
 
 code {

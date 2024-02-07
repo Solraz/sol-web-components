@@ -1,10 +1,7 @@
-{% extends "_base.html" %}
-
-{% block content %}
 <show-component>
   <div class="show-component-title">
-    <h2 class="weight-500">Select / Combobox</h2>
-    <h5 class="weight-300">Autocomplete input and command palette with a list of suggestions.</h5>
+    <h2 class="weight-500">Carousel</h2>
+    <h5 class="weight-300">A horizontal stack of items that each reveal a section of content.</h5>
     <div class="tags">
       <tag>
         <h6>Docs</h6> <svg width="12" height="12" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -29,59 +26,30 @@
     <h5 data-show="html">HTML</h5>
     <h5 data-show="scss">SCSS</h5>
     <h5 data-show="js">JS</h5>
-    <h5 data-show="php">PHP</h5>
   </div>
   <div class="show-component-visual">
     <div class="visual-holder">
       <container preview class="active">
-        <form class="sol-form" action="#" method="post" enctype="multipart/form-data">
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">E-mail</label>
-            <input type="email" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="on"
-              inputmode="email" pattern="[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+" title="Invalid email, please verify."
-              name="email" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Username</label>
-            <input type="text" autocapitalize="off" spellcheck="false" autocorrect="off" autocomplete="on"
-              pattern="/^\w+$/" name="username" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Password</label>
-            <input type="password" name="email" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Phone</label>
-            <input type="text" inputmode="numeric" name="number" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Numeric</label>
-            <input type="number" min="0" max="100" inputmode="numeric" name="number" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Credit Card</label>
-            <input type="text" name="credit_card" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">Date</label>
-            <input type="date" name="date" class="sol-form-input" />
-          </div>
-          <div class="sol-form-group">
-            <label for="" class="sol-form-label">IPV4 or IPV6</label>
-            <input type="text" name="ipv6" class="sol-form-input"
-              pattern="(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))|(\b25[0-5]|\b2[0-4][0-9]|\b[01]?[0-9][0-9]?)(\.(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)){3}" />
-          </div>
-          <div class="sol-form-group-inline sol-form-group-checkbox">
-            <input type="checkbox" name="" class="sol-form-input">
-            <label for="" class="sol-form-label">
-              <h5>I agree with the terms of service</h5>
-              <h5>Click <a href=""><u>here</u></a> to read the terms of service.</h5>
-            </label>
-          </div>
-          <div class="sol-form-group">
-            <input type="submit" value="Submit" class="sol-form-input" />
-          </div>
-        </form>
+        <sol-carousel>
+          <sol-carousel-items>
+            <sol-carousel-item>
+              <h1>1</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>2</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>3</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>4</h1>
+            </sol-carousel-item>
+            <sol-carousel-item>
+              <h1>5</h1>
+              <div class="img-holder"></div>
+            </sol-carousel-item>
+          </sol-carousel-items>
+        </sol-carousel>
       </container>
       <container html>
         <code>
@@ -170,12 +138,6 @@ const sol_accordion = () => {
 export { sol_accordion };
         </code>
       </container>
-      <container php>
-        <code>
-Haters          
-        </code>
-      </container>
     </div>
   </div>
 </show-component>
-{% endblock content %}
